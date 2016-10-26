@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		273C3B2D1DC03CAA00ABFB0F /* TXCanlendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 273C3B2C1DC03CAA00ABFB0F /* TXCanlendarScrollView.m */; };
+		273C3B301DC0441B00ABFB0F /* TXCanlendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 273C3B2F1DC0441B00ABFB0F /* TXCanlendarCell.m */; };
+		273C3B331DC0493E00ABFB0F /* bt_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 273C3B311DC0493E00ABFB0F /* bt_next@2x.png */; };
+		273C3B341DC0493E00ABFB0F /* bt_previous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 273C3B321DC0493E00ABFB0F /* bt_previous@2x.png */; };
+		273C3B391DC0580700ABFB0F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 273C3B381DC0580700ABFB0F /* libz.tbd */; };
+		273C3B3B1DC0586600ABFB0F /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273C3B3A1DC0586600ABFB0F /* Reveal.framework */; };
+		27F7B38C1DBF072500B21A82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F7B38B1DBF072500B21A82 /* main.m */; };
+		27F7B38F1DBF072500B21A82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F7B38E1DBF072500B21A82 /* AppDelegate.m */; };
+		27F7B3921DBF072500B21A82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F7B3911DBF072500B21A82 /* ViewController.m */; };
+		27F7B3951DBF072500B21A82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F7B3931DBF072500B21A82 /* Main.storyboard */; };
+		27F7B3971DBF072500B21A82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F7B3961DBF072500B21A82 /* Assets.xcassets */; };
+		27F7B39A1DBF072500B21A82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F7B3981DBF072500B21A82 /* LaunchScreen.storyboard */; };
+		27F7B3A51DBF072500B21A82 /* TXCanlendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F7B3A41DBF072500B21A82 /* TXCanlendarTests.m */; };
+		27F7B3B01DBF072500B21A82 /* TXCanlendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F7B3AF1DBF072500B21A82 /* TXCanlendarUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27F7B3A11DBF072500B21A82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27F7B37F1DBF072500B21A82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27F7B3861DBF072500B21A82;
+			remoteInfo = TXCanlendar;
+		};
+		27F7B3AC1DBF072500B21A82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27F7B37F1DBF072500B21A82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27F7B3861DBF072500B21A82;
+			remoteInfo = TXCanlendar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		273C3B2B1DC03CAA00ABFB0F /* TXCanlendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXCanlendarScrollView.h; sourceTree = "<group>"; };
+		273C3B2C1DC03CAA00ABFB0F /* TXCanlendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXCanlendarScrollView.m; sourceTree = "<group>"; };
+		273C3B2E1DC0441B00ABFB0F /* TXCanlendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXCanlendarCell.h; sourceTree = "<group>"; };
+		273C3B2F1DC0441B00ABFB0F /* TXCanlendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXCanlendarCell.m; sourceTree = "<group>"; };
+		273C3B311DC0493E00ABFB0F /* bt_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_next@2x.png"; sourceTree = "<group>"; };
+		273C3B321DC0493E00ABFB0F /* bt_previous@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_previous@2x.png"; sourceTree = "<group>"; };
+		273C3B381DC0580700ABFB0F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		273C3B3A1DC0586600ABFB0F /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = ../TXCanlendar/Reveal.framework; sourceTree = "<group>"; };
+		27F7B3871DBF072500B21A82 /* TXCanlendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TXCanlendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27F7B38B1DBF072500B21A82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27F7B38D1DBF072500B21A82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		27F7B38E1DBF072500B21A82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		27F7B3901DBF072500B21A82 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		27F7B3911DBF072500B21A82 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		27F7B3941DBF072500B21A82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27F7B3961DBF072500B21A82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27F7B3991DBF072500B21A82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27F7B39B1DBF072500B21A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27F7B3A01DBF072500B21A82 /* TXCanlendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TXCanlendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27F7B3A41DBF072500B21A82 /* TXCanlendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXCanlendarTests.m; sourceTree = "<group>"; };
+		27F7B3A61DBF072500B21A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27F7B3AB1DBF072500B21A82 /* TXCanlendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TXCanlendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27F7B3AF1DBF072500B21A82 /* TXCanlendarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXCanlendarUITests.m; sourceTree = "<group>"; };
+		27F7B3B11DBF072500B21A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27F7B3841DBF072500B21A82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				273C3B391DC0580700ABFB0F /* libz.tbd in Frameworks */,
+				273C3B3B1DC0586600ABFB0F /* Reveal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F7B39D1DBF072500B21A82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F7B3A81DBF072500B21A82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		273C3B2A1DC03C7600ABFB0F /* TXCanlendar */ = {
+			isa = PBXGroup;
+			children = (
+				273C3B311DC0493E00ABFB0F /* bt_next@2x.png */,
+				273C3B321DC0493E00ABFB0F /* bt_previous@2x.png */,
+				273C3B2B1DC03CAA00ABFB0F /* TXCanlendarScrollView.h */,
+				273C3B2C1DC03CAA00ABFB0F /* TXCanlendarScrollView.m */,
+				273C3B2E1DC0441B00ABFB0F /* TXCanlendarCell.h */,
+				273C3B2F1DC0441B00ABFB0F /* TXCanlendarCell.m */,
+			);
+			name = TXCanlendar;
+			sourceTree = "<group>";
+		};
+		273C3B371DC0580700ABFB0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				273C3B381DC0580700ABFB0F /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27F7B37E1DBF072500B21A82 = {
+			isa = PBXGroup;
+			children = (
+				27F7B3891DBF072500B21A82 /* TXCanlendar */,
+				27F7B3A31DBF072500B21A82 /* TXCanlendarTests */,
+				27F7B3AE1DBF072500B21A82 /* TXCanlendarUITests */,
+				27F7B3881DBF072500B21A82 /* Products */,
+				273C3B371DC0580700ABFB0F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		27F7B3881DBF072500B21A82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27F7B3871DBF072500B21A82 /* TXCanlendar.app */,
+				27F7B3A01DBF072500B21A82 /* TXCanlendarTests.xctest */,
+				27F7B3AB1DBF072500B21A82 /* TXCanlendarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27F7B3891DBF072500B21A82 /* TXCanlendar */ = {
+			isa = PBXGroup;
+			children = (
+				273C3B2A1DC03C7600ABFB0F /* TXCanlendar */,
+				27F7B38D1DBF072500B21A82 /* AppDelegate.h */,
+				27F7B38E1DBF072500B21A82 /* AppDelegate.m */,
+				27F7B3901DBF072500B21A82 /* ViewController.h */,
+				27F7B3911DBF072500B21A82 /* ViewController.m */,
+				27F7B3931DBF072500B21A82 /* Main.storyboard */,
+				27F7B3961DBF072500B21A82 /* Assets.xcassets */,
+				27F7B3981DBF072500B21A82 /* LaunchScreen.storyboard */,
+				27F7B39B1DBF072500B21A82 /* Info.plist */,
+				27F7B38A1DBF072500B21A82 /* Supporting Files */,
+			);
+			path = TXCanlendar;
+			sourceTree = "<group>";
+		};
+		27F7B38A1DBF072500B21A82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27F7B38B1DBF072500B21A82 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27F7B3A31DBF072500B21A82 /* TXCanlendarTests */ = {
+			isa = PBXGroup;
+			children = (
+				273C3B3A1DC0586600ABFB0F /* Reveal.framework */,
+				27F7B3A41DBF072500B21A82 /* TXCanlendarTests.m */,
+				27F7B3A61DBF072500B21A82 /* Info.plist */,
+			);
+			path = TXCanlendarTests;
+			sourceTree = "<group>";
+		};
+		27F7B3AE1DBF072500B21A82 /* TXCanlendarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				27F7B3AF1DBF072500B21A82 /* TXCanlendarUITests.m */,
+				27F7B3B11DBF072500B21A82 /* Info.plist */,
+			);
+			path = TXCanlendarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27F7B3861DBF072500B21A82 /* TXCanlendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27F7B3B41DBF072500B21A82 /* Build configuration list for PBXNativeTarget "TXCanlendar" */;
+			buildPhases = (
+				27F7B3831DBF072500B21A82 /* Sources */,
+				27F7B3841DBF072500B21A82 /* Frameworks */,
+				27F7B3851DBF072500B21A82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TXCanlendar;
+			productName = TXCanlendar;
+			productReference = 27F7B3871DBF072500B21A82 /* TXCanlendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27F7B39F1DBF072500B21A82 /* TXCanlendarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27F7B3B71DBF072500B21A82 /* Build configuration list for PBXNativeTarget "TXCanlendarTests" */;
+			buildPhases = (
+				27F7B39C1DBF072500B21A82 /* Sources */,
+				27F7B39D1DBF072500B21A82 /* Frameworks */,
+				27F7B39E1DBF072500B21A82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27F7B3A21DBF072500B21A82 /* PBXTargetDependency */,
+			);
+			name = TXCanlendarTests;
+			productName = TXCanlendarTests;
+			productReference = 27F7B3A01DBF072500B21A82 /* TXCanlendarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		27F7B3AA1DBF072500B21A82 /* TXCanlendarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27F7B3BA1DBF072500B21A82 /* Build configuration list for PBXNativeTarget "TXCanlendarUITests" */;
+			buildPhases = (
+				27F7B3A71DBF072500B21A82 /* Sources */,
+				27F7B3A81DBF072500B21A82 /* Frameworks */,
+				27F7B3A91DBF072500B21A82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27F7B3AD1DBF072500B21A82 /* PBXTargetDependency */,
+			);
+			name = TXCanlendarUITests;
+			productName = TXCanlendarUITests;
+			productReference = 27F7B3AB1DBF072500B21A82 /* TXCanlendarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27F7B37F1DBF072500B21A82 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = ZTX;
+				TargetAttributes = {
+					27F7B3861DBF072500B21A82 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					27F7B39F1DBF072500B21A82 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 27F7B3861DBF072500B21A82;
+					};
+					27F7B3AA1DBF072500B21A82 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 27F7B3861DBF072500B21A82;
+					};
+				};
+			};
+			buildConfigurationList = 27F7B3821DBF072500B21A82 /* Build configuration list for PBXProject "TXCanlendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27F7B37E1DBF072500B21A82;
+			productRefGroup = 27F7B3881DBF072500B21A82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27F7B3861DBF072500B21A82 /* TXCanlendar */,
+				27F7B39F1DBF072500B21A82 /* TXCanlendarTests */,
+				27F7B3AA1DBF072500B21A82 /* TXCanlendarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27F7B3851DBF072500B21A82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				273C3B341DC0493E00ABFB0F /* bt_previous@2x.png in Resources */,
+				27F7B39A1DBF072500B21A82 /* LaunchScreen.storyboard in Resources */,
+				27F7B3971DBF072500B21A82 /* Assets.xcassets in Resources */,
+				27F7B3951DBF072500B21A82 /* Main.storyboard in Resources */,
+				273C3B331DC0493E00ABFB0F /* bt_next@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F7B39E1DBF072500B21A82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F7B3A91DBF072500B21A82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27F7B3831DBF072500B21A82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				273C3B2D1DC03CAA00ABFB0F /* TXCanlendarScrollView.m in Sources */,
+				27F7B3921DBF072500B21A82 /* ViewController.m in Sources */,
+				27F7B38F1DBF072500B21A82 /* AppDelegate.m in Sources */,
+				273C3B301DC0441B00ABFB0F /* TXCanlendarCell.m in Sources */,
+				27F7B38C1DBF072500B21A82 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F7B39C1DBF072500B21A82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F7B3A51DBF072500B21A82 /* TXCanlendarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F7B3A71DBF072500B21A82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27F7B3B01DBF072500B21A82 /* TXCanlendarUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27F7B3A21DBF072500B21A82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27F7B3861DBF072500B21A82 /* TXCanlendar */;
+			targetProxy = 27F7B3A11DBF072500B21A82 /* PBXContainerItemProxy */;
+		};
+		27F7B3AD1DBF072500B21A82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27F7B3861DBF072500B21A82 /* TXCanlendar */;
+			targetProxy = 27F7B3AC1DBF072500B21A82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		27F7B3931DBF072500B21A82 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27F7B3941DBF072500B21A82 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		27F7B3981DBF072500B21A82 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27F7B3991DBF072500B21A82 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27F7B3B21DBF072500B21A82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27F7B3B31DBF072500B21A82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27F7B3B51DBF072500B21A82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TXCanlendar",
+				);
+				INFOPLIST_FILE = TXCanlendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[sdk=iphonesimulator*]" = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = ztx.TXCanlendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		27F7B3B61DBF072500B21A82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TXCanlendar",
+				);
+				INFOPLIST_FILE = TXCanlendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ztx.TXCanlendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		27F7B3B81DBF072500B21A82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TXCanlendarTests",
+				);
+				INFOPLIST_FILE = TXCanlendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ztx.TXCanlendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TXCanlendar.app/TXCanlendar";
+			};
+			name = Debug;
+		};
+		27F7B3B91DBF072500B21A82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TXCanlendarTests",
+				);
+				INFOPLIST_FILE = TXCanlendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ztx.TXCanlendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TXCanlendar.app/TXCanlendar";
+			};
+			name = Release;
+		};
+		27F7B3BB1DBF072500B21A82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TXCanlendarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ztx.TXCanlendarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TXCanlendar;
+			};
+			name = Debug;
+		};
+		27F7B3BC1DBF072500B21A82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TXCanlendarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ztx.TXCanlendarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TXCanlendar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27F7B3821DBF072500B21A82 /* Build configuration list for PBXProject "TXCanlendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27F7B3B21DBF072500B21A82 /* Debug */,
+				27F7B3B31DBF072500B21A82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27F7B3B41DBF072500B21A82 /* Build configuration list for PBXNativeTarget "TXCanlendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27F7B3B51DBF072500B21A82 /* Debug */,
+				27F7B3B61DBF072500B21A82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27F7B3B71DBF072500B21A82 /* Build configuration list for PBXNativeTarget "TXCanlendarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27F7B3B81DBF072500B21A82 /* Debug */,
+				27F7B3B91DBF072500B21A82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27F7B3BA1DBF072500B21A82 /* Build configuration list for PBXNativeTarget "TXCanlendarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27F7B3BB1DBF072500B21A82 /* Debug */,
+				27F7B3BC1DBF072500B21A82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27F7B37F1DBF072500B21A82 /* Project object */;
+}
