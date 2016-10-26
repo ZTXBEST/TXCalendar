@@ -13,6 +13,7 @@
 		273C3B341DC0493E00ABFB0F /* bt_previous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 273C3B321DC0493E00ABFB0F /* bt_previous@2x.png */; };
 		273C3B391DC0580700ABFB0F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 273C3B381DC0580700ABFB0F /* libz.tbd */; };
 		273C3B3B1DC0586600ABFB0F /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273C3B3A1DC0586600ABFB0F /* Reveal.framework */; };
+		273C3B3E1DC080E900ABFB0F /* TXDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 273C3B3D1DC080E900ABFB0F /* TXDatePickerView.m */; };
 		27F7B38C1DBF072500B21A82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F7B38B1DBF072500B21A82 /* main.m */; };
 		27F7B38F1DBF072500B21A82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F7B38E1DBF072500B21A82 /* AppDelegate.m */; };
 		27F7B3921DBF072500B21A82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F7B3911DBF072500B21A82 /* ViewController.m */; };
@@ -49,6 +50,8 @@
 		273C3B321DC0493E00ABFB0F /* bt_previous@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_previous@2x.png"; sourceTree = "<group>"; };
 		273C3B381DC0580700ABFB0F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		273C3B3A1DC0586600ABFB0F /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = ../TXCanlendar/Reveal.framework; sourceTree = "<group>"; };
+		273C3B3C1DC080E900ABFB0F /* TXDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXDatePickerView.h; sourceTree = "<group>"; };
+		273C3B3D1DC080E900ABFB0F /* TXDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXDatePickerView.m; sourceTree = "<group>"; };
 		27F7B3871DBF072500B21A82 /* TXCanlendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TXCanlendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F7B38B1DBF072500B21A82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27F7B38D1DBF072500B21A82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				273C3B321DC0493E00ABFB0F /* bt_previous@2x.png */,
 				273C3B2B1DC03CAA00ABFB0F /* TXCanlendarScrollView.h */,
 				273C3B2C1DC03CAA00ABFB0F /* TXCanlendarScrollView.m */,
+				273C3B3C1DC080E900ABFB0F /* TXDatePickerView.h */,
+				273C3B3D1DC080E900ABFB0F /* TXDatePickerView.m */,
 				273C3B2E1DC0441B00ABFB0F /* TXCanlendarCell.h */,
 				273C3B2F1DC0441B00ABFB0F /* TXCanlendarCell.m */,
 			);
@@ -317,6 +322,7 @@
 			files = (
 				273C3B2D1DC03CAA00ABFB0F /* TXCanlendarScrollView.m in Sources */,
 				27F7B3921DBF072500B21A82 /* ViewController.m in Sources */,
+				273C3B3E1DC080E900ABFB0F /* TXDatePickerView.m in Sources */,
 				27F7B38F1DBF072500B21A82 /* AppDelegate.m in Sources */,
 				273C3B301DC0441B00ABFB0F /* TXCanlendarCell.m in Sources */,
 				27F7B38C1DBF072500B21A82 /* main.m in Sources */,

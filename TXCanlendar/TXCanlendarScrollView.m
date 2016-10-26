@@ -18,6 +18,7 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
 @interface TXCanlendarScrollView()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic, strong)UIView *titleView;
 @property(nonatomic, strong)UILabel *dateLabel;
+@property(nonatomic, strong)UIButton *dateButton;
 @property(nonatomic, strong)UIButton *lastMonthButton;
 @property(nonatomic, strong)UIButton *nextMonthButton;
 @property(nonatomic, strong)UIButton *lastYearButton;
@@ -35,8 +36,13 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
         self.backgroundColor = [UIColor whiteColor];
         [self buildTitleView];
         [self buildCanlerdarView];
+        [self configGesture];
     }
     return self;
+}
+
+- (void)configGesture {
+    [self addSwip];
 }
 
 - (void)buildTitleView {
@@ -44,21 +50,46 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     _titleView.backgroundColor = RGBA(32, 196, 138, 1);
     [self addSubview:_titleView];
     
-    _dateLabel = [[UILabel alloc] init];
-    _dateLabel.center = _titleView.center;
-    _dateLabel.textAlignment = NSTextAlignmentCenter;
-    _dateLabel.bounds = CGRectMake(0, 0, 100, 44);
-    [_titleView addSubview:_dateLabel];
+//    _dateLabel = [[UILabel alloc] init];
+//    _dateLabel.center = _titleView.center;
+//    _dateLabel.textAlignment = NSTextAlignmentCenter;
+//    _dateLabel.bounds = CGRectMake(0, 0, 100, 44);
+//    [_titleView addSubview:_dateLabel];
+    
+    _dateButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _dateButton.center = _titleView.center;
+    _dateButton.bounds = CGRectMake(0, 0, 100, 44);
+    [_dateButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_dateButton addTarget:self action:@selector(dateButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_titleView addSubview:_dateButton];
+    
+    _lastYearButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _lastYearButton.center = CGPointMake(18, _titleView.center.y);
+    _lastYearButton.bounds = CGRectMake(0, 0, 25, 25);
+//    [_lastYearButton setBackgroundImage:[UIImage imageNamed:@"bt_previous"] forState:UIControlStateNormal];
+    [_lastYearButton setTitle:@"<<" forState:UIControlStateNormal];
+    [_lastYearButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_lastYearButton addTarget:self action:@selector(lastYearButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_titleView addSubview:_lastYearButton];
     
     _lastMonthButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _lastMonthButton.center = CGPointMake(18, _titleView.center.y);
+    _lastMonthButton.center = CGPointMake(38, _titleView.center.y);
     _lastMonthButton.bounds = CGRectMake(0, 0, 16, 16);
     [_lastMonthButton setBackgroundImage:[UIImage imageNamed:@"bt_previous"] forState:UIControlStateNormal];
     [_lastMonthButton addTarget:self action:@selector(lastMonthAction:) forControlEvents:UIControlEventTouchUpInside];
     [_titleView addSubview:_lastMonthButton];
     
+    _nextYearButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _nextYearButton.center = CGPointMake(_titleView.frame.size.width-18, _titleView.center.y);
+    _nextYearButton.bounds = CGRectMake(0, 0, 25, 25);
+//    [_nextYearButton setBackgroundImage:[UIImage imageNamed:@"bt_next@2x"] forState:UIControlStateNormal];
+    [_nextYearButton setTitle:@">>" forState:UIControlStateNormal];
+    [_nextYearButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_nextYearButton addTarget:self action:@selector(nextYearButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_titleView addSubview:_nextYearButton];
+    
     _nextMonthButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _nextMonthButton.center = CGPointMake(_titleView.frame.size.width-18, _titleView.center.y);
+    _nextMonthButton.center = CGPointMake(_titleView.frame.size.width-38, _titleView.center.y);
     _nextMonthButton.bounds = CGRectMake(0, 0, 16, 16);
     [_nextMonthButton setBackgroundImage:[UIImage imageNamed:@"bt_next@2x"] forState:UIControlStateNormal];
     [_nextMonthButton addTarget:self action:@selector(nextMonthAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -91,7 +122,8 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
 
 - (void)setDate:(NSDate *)date {
     _date = date;
-    [_dateLabel setText:[NSString stringWithFormat:@"%.2li-%ld",(long)[self year:date],(long)[self month:date]]];
+//    [_dateLabel setText:[NSString stringWithFormat:@"%.2li-%ld",(long)[self year:date],(long)[self month:date]]];
+    [_dateButton setTitle:[NSString stringWithFormat:@"%.2li-%ld",(long)[self year:date],(long)[self month:date]] forState:UIControlStateNormal];
     [_collectionView reloadData];
 }
 
@@ -172,7 +204,58 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     return newDate;
 }
 
+#pragma mark - 手势
+- (void)addSwip {
+    UISwipeGestureRecognizer *swipLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipLeft:)];
+    swipLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self addGestureRecognizer:swipLeft];
+    
+    UISwipeGestureRecognizer *swipRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipRight:)];
+    swipRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self addGestureRecognizer:swipRight];
+    
+//    UISwipeGestureRecognizer *swipUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipUp:)];
+//    swipUp.direction = UISwipeGestureRecognizerDirectionUp;
+//    [self addGestureRecognizer:swipUp];
+//    
+//    UISwipeGestureRecognizer *swipDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipDown:)];
+//    swipDown.direction = UISwipeGestureRecognizerDirectionLeft;
+//    [self addGestureRecognizer:swipDown];
+}
+
+- (void)swipLeft:(UISwipeGestureRecognizer *)swip {
+    [self nextMonthAction:nil];
+}
+
+- (void)swipRight:(UISwipeGestureRecognizer *)swip {
+    [self lastMonthAction:nil];
+}
+
+//- (void)swipUp:(UISwipeGestureRecognizer *)swip {
+//    [self lastYearButtonAction:nil];
+//}
+//
+//- (void)swipDown:(UISwipeGestureRecognizer *)swip {
+//    [self nextYearButtonAction:nil];
+//}
+
 #pragma mark - Action
+- (void)dateButtonAction:(UIButton *)button {
+    
+}
+
+- (void)lastYearButtonAction:(UIButton *)button {
+    [UIView transitionWithView:self duration:0.5 options:UIViewAnimationOptionTransitionFlipFromTop animations:^(void) {
+        self.date = [self lastYear:self.date];
+    } completion:nil];
+}
+
+- (void)nextYearButtonAction:(UIButton *)button {
+    [UIView transitionWithView:self duration:0.5 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^(void) {
+        self.date = [self nextYear:self.date];
+    } completion:nil];
+}
+
 - (void)lastMonthAction:(UIButton *)button {
     [UIView transitionWithView:self duration:0.5 options:UIViewAnimationOptionTransitionCurlDown animations:^(void) {
         self.date = [self lastMonth:self.date];
