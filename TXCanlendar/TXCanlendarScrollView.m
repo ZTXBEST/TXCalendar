@@ -108,7 +108,7 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     [self addSubview:_collectionView];
     [self configData];
     
-    _pickerView = [[TXDatePickerView alloc] initWithFrame:CGRectMake(0, 44,self.frame.size.width, self.frame.size.height-44*2)];
+    _pickerView = [[TXDatePickerView alloc] initWithFrame:CGRectMake(0, 44,self.frame.size.width, 180)];
     _pickerView.hidden = YES;
     [self addSubview:_pickerView];
 }
@@ -243,16 +243,25 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     翻转动画，选择年月
  */
 - (void)dateButtonAction:(UIButton *)button {
+    button.enabled = NO;
     [self showPickerView];
 }
 
 - (void)lastYearButtonAction:(UIButton *)button {
+    if (_lastMonthButton.hidden) {
+        [self dismissPickerView];
+        return;
+    }
     [UIView transitionWithView:self duration:0.5 options:UIViewAnimationOptionTransitionFlipFromTop animations:^(void) {
         self.date = [self lastYear:self.date];
     } completion:nil];
 }
 
 - (void)nextYearButtonAction:(UIButton *)button {
+    if (_lastMonthButton.hidden) {
+        [self dismissPickerView];
+        return;
+    }
     [UIView transitionWithView:self duration:0.5 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^(void) {
         self.date = [self nextYear:self.date];
     } completion:nil];
@@ -273,12 +282,16 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
 #pragma mark - ShowPickerView
 - (void)showPickerView {
     _pickerView.hidden = NO;
-    _lastYearButton.hidden = YES;
+//    _lastYearButton.hidden = YES;
     _lastMonthButton.hidden = YES;
-    _nextYearButton.hidden = YES;
+//    _nextYearButton.hidden = YES;
     _nextMonthButton.hidden = YES;
     [_dateButton setTitle:@"请选择年月" forState:UIControlStateNormal];
-    
+    [_lastYearButton setTitle:@"取消" forState:UIControlStateNormal];
+    _lastYearButton.bounds = CGRectMake(0, 0, 50, 44);
+    [_nextYearButton setTitle:@"确定" forState:UIControlStateNormal];
+    _nextYearButton.bounds = CGRectMake(0, 0, 50, 44);
+
     CATransform3D trans = CATransform3DIdentity;
     trans.m34 = -1.0/500.0;
     trans = CATransform3DTranslate(trans, 0, 45, 0);
@@ -293,6 +306,39 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     basicAnimation.cumulative = NO;
     basicAnimation.repeatCount = 0;
     [_collectionView.layer addAnimation:basicAnimation forKey:nil];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPickerView)];
+    [_collectionView addGestureRecognizer:tap];
+//    _pickerView.frame = CGRectMake(0, 44, self.frame.size.width, _collectionView.frame.origin.y);
+}
+
+- (void)dismissPickerView {
+
+    _lastMonthButton.hidden = NO;
+    _nextMonthButton.hidden = NO;
+    self.date = _date;
+    [_lastYearButton setTitle:@"<<" forState:UIControlStateNormal];
+    [_nextYearButton setTitle:@">>" forState:UIControlStateNormal];
+
+    [CATransaction begin];
+    CATransform3D trans=CATransform3DIdentity;
+    trans.m34=-1.0/500.0;
+    trans=CATransform3DTranslate(trans, 0, 45, 0);
+    trans=CATransform3DRotate(trans, -M_PI/2.8, 1, 0,0);
+    trans=CATransform3DScale(trans, 0.8, 0.8, 0.8);
+    _collectionView.layer.transform=CATransform3DIdentity;
+    CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"transform"];
+    basicAnimation.fromValue=[NSValue valueWithCATransform3D:trans];
+    basicAnimation.toValue =[NSValue  valueWithCATransform3D:CATransform3DIdentity];
+    basicAnimation.duration = 0.3f;
+    basicAnimation.cumulative = NO;
+    basicAnimation.repeatCount = 0;
+    [CATransaction setCompletionBlock:^{
+        _pickerView.hidden=YES;
+        _dateButton.enabled = YES;
+        for (UITapGestureRecognizer *tap in _collectionView.gestureRecognizers) {
+            [_collectionView removeGestureRecognizer:tap];
+        }
+    }];
 }
 
 #pragma mark - CollectionView
