@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TXDatePickerView : UIView
-
+@property(nonatomic, strong, readonly)NSString *selectdDateStr;
 @end

@@ -8,7 +8,7 @@
 
 #import "TXCanlendarScrollView.h"
 #import "TXCanlendarCell.h"
-
+#import "TXDatePickerView.h"
 
 #define RGBA(r,g,b,a)   [UIColor colorWithRed:(float)r/255.0f green:(float)g/255.0f blue:(float)b/255.0f alpha:a]
 #define TotalNumber 2000
@@ -26,6 +26,7 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
 @property(nonatomic, strong)UICollectionView *collectionView;
 @property(nonatomic, strong)NSArray *dataArray;
 @property(nonatomic, strong)NSArray *weekDayArray;
+@property(nonatomic, strong)TXDatePickerView *pickerView;
 @end
 
 @implementation TXCanlendarScrollView
@@ -49,12 +50,6 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     _titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 44)];
     _titleView.backgroundColor = RGBA(32, 196, 138, 1);
     [self addSubview:_titleView];
-    
-//    _dateLabel = [[UILabel alloc] init];
-//    _dateLabel.center = _titleView.center;
-//    _dateLabel.textAlignment = NSTextAlignmentCenter;
-//    _dateLabel.bounds = CGRectMake(0, 0, 100, 44);
-//    [_titleView addSubview:_dateLabel];
     
     _dateButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _dateButton.center = _titleView.center;
@@ -112,6 +107,10 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     _collectionView.backgroundColor = [UIColor yellowColor];
     [self addSubview:_collectionView];
     [self configData];
+    
+    _pickerView = [[TXDatePickerView alloc] initWithFrame:CGRectMake(0, 44,self.frame.size.width, self.frame.size.height-44*2)];
+    _pickerView.hidden = YES;
+    [self addSubview:_pickerView];
 }
 
 #pragma mark - 加载数据
@@ -240,8 +239,11 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
 //}
 
 #pragma mark - Action
+/**
+    翻转动画，选择年月
+ */
 - (void)dateButtonAction:(UIButton *)button {
-    
+    [self showPickerView];
 }
 
 - (void)lastYearButtonAction:(UIButton *)button {
@@ -266,6 +268,31 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     [UIView transitionWithView:self duration:0.5 options:UIViewAnimationOptionTransitionCurlUp animations:^(void) {
         self.date = [self nextMonth:self.date];
     } completion:nil];
+}
+
+#pragma mark - ShowPickerView
+- (void)showPickerView {
+    _pickerView.hidden = NO;
+    _lastYearButton.hidden = YES;
+    _lastMonthButton.hidden = YES;
+    _nextYearButton.hidden = YES;
+    _nextMonthButton.hidden = YES;
+    [_dateButton setTitle:@"请选择年月" forState:UIControlStateNormal];
+    
+    CATransform3D trans = CATransform3DIdentity;
+    trans.m34 = -1.0/500.0;
+    trans = CATransform3DTranslate(trans, 0, 45, 0);
+    trans=CATransform3DRotate(trans, -M_PI/2.8, 1, 0,0);
+    trans = CATransform3DScale(trans, 0.8, 0.8, 0.8);
+    _collectionView.layer.transform = trans;
+    
+    CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"transform"];
+    basicAnimation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    basicAnimation.toValue = [NSValue valueWithCATransform3D:trans];
+    basicAnimation.duration = 0.3f;
+    basicAnimation.cumulative = NO;
+    basicAnimation.repeatCount = 0;
+    [_collectionView.layer addAnimation:basicAnimation forKey:nil];
 }
 
 #pragma mark - CollectionView
