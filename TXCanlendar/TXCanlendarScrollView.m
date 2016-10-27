@@ -332,6 +332,7 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     basicAnimation.duration = 0.3f;
     basicAnimation.cumulative = NO;
     basicAnimation.repeatCount = 0;
+    [_collectionView.layer addAnimation:basicAnimation forKey:nil];
     [CATransaction setCompletionBlock:^{
         _pickerView.hidden=YES;
         _dateButton.enabled = YES;
