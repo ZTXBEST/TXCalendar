@@ -61,7 +61,6 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     _lastYearButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _lastYearButton.center = CGPointMake(18, _titleView.center.y);
     _lastYearButton.bounds = CGRectMake(0, 0, 25, 25);
-//    [_lastYearButton setBackgroundImage:[UIImage imageNamed:@"bt_previous"] forState:UIControlStateNormal];
     [_lastYearButton setTitle:@"<<" forState:UIControlStateNormal];
     [_lastYearButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_lastYearButton addTarget:self action:@selector(lastYearButtonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -77,7 +76,6 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     _nextYearButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _nextYearButton.center = CGPointMake(_titleView.frame.size.width-18, _titleView.center.y);
     _nextYearButton.bounds = CGRectMake(0, 0, 25, 25);
-//    [_nextYearButton setBackgroundImage:[UIImage imageNamed:@"bt_next@2x"] forState:UIControlStateNormal];
     [_nextYearButton setTitle:@">>" forState:UIControlStateNormal];
     [_nextYearButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_nextYearButton addTarget:self action:@selector(nextYearButtonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -281,11 +279,11 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
 
 #pragma mark - ShowPickerView
 - (void)showPickerView {
+    
     _pickerView.hidden = NO;
-//    _lastYearButton.hidden = YES;
     _lastMonthButton.hidden = YES;
-//    _nextYearButton.hidden = YES;
     _nextMonthButton.hidden = YES;
+    
     [_dateButton setTitle:@"请选择年月" forState:UIControlStateNormal];
     [_lastYearButton setTitle:@"取消" forState:UIControlStateNormal];
     _lastYearButton.bounds = CGRectMake(0, 0, 50, 44);
@@ -308,7 +306,6 @@ NSString *const TXCalendarCellIdentifier = @"TXCalendarCellIdentifier";
     [_collectionView.layer addAnimation:basicAnimation forKey:nil];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPickerView)];
     [_collectionView addGestureRecognizer:tap];
-//    _pickerView.frame = CGRectMake(0, 44, self.frame.size.width, _collectionView.frame.origin.y);
 }
 
 - (void)dismissPickerView {
